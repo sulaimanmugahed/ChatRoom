@@ -21,13 +21,4 @@ public class AccountController(IAccountService accountService,RoleManager<AppRol
 		   => await accountService.RegisterUser(request);
 
 
-	[HttpPost(nameof(Addrole))]
-	public async Task Addrole()
-	   => await roleManager.CreateAsync(new AppRole("User"));
-
-
-	[HttpGet(nameof(GetData)),Authorize(Roles ="Admin")]
-	public string GetData()
-	   => "hello world";
-
 }
