@@ -84,9 +84,13 @@ Authorization: Bearer <access_token>
 
 The access token can be obtained by making a successful login request to the `/api/Account/Authenticate` endpoint.
 
-## Signalr Hub
- **/chatHub**: Connect to the signalr hub
+## Signalr
+ 
+To use SignalR in your client application, you'll need to follow these steps: 
 
+1. Install the SignalR library for your client platform or programming language. SignalR is available for various platforms, including JavaScript, .NET, Java, and more. You can find the appropriate library and installation instructions in the documentation specific to your platform. 
+
+2. Connect to the SignalR hub from your client application. You'll need to provide the URL of the SignalR hub, which typically follows the format `http(s)://<hostname>/chatHub`. Replace `<hostname>` with the appropriate server address and port.
 
 
 Feel free to contribute to this project by submitting bug reports, feature requests, or pull requests. Happy coding!
