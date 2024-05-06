@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Data;
 
-namespace ChatRoom.Api.Contracts.Dtos;
+namespace ChatRoom.Api.Contracts.Dtos.Account;
 
 public class RegistrationRequest
 {

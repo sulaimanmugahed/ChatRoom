@@ -1,4 +1,4 @@
-﻿namespace ChatRoom.Api.Contracts.Dtos;
+﻿namespace ChatRoom.Api.Contracts.Dtos.Messages;
 
 
 public class RoomMessageInput

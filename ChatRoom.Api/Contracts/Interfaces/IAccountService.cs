@@ -1,4 +1,4 @@
-﻿using ChatRoom.Api.Contracts.Dtos;
+﻿using ChatRoom.Api.Contracts.Dtos.Account;
 using ChatRoom.Api.Contracts.Wrappers;
 using ChatRoom.Api.Domain.Models;
 

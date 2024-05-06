@@ -29,11 +29,29 @@ public class RoomService(RoomDbContext context) : IRoomService
         return await context.UserRooms.AnyAsync(x => x.RoomId.ToString() == roomId && x.UserId == userId);
     }
 
+    public async Task<Room?> GetRoom(string id)
+    {
+      return  await context.Rooms.SingleOrDefaultAsync(x => x.Id == id);
+    }
+
+    public async Task<List<Room>> GetAllRoom()
+    {
+        return await context.Rooms.ToListAsync();
+    } 
 
     public async Task CreateRoom(Room room)
     {
         await context.Rooms.AddAsync(room);
         await context.SaveChangesAsync();
+    }
+
+    public async Task<string> GetRoomOwner(string roomId)
+    {
+        var owner = await context.UserRooms
+            .Include(x => x.User)
+            .FirstOrDefaultAsync(x => x.RoomId == roomId && x.MemberRole == RoomMemberRoles.Admin);
+
+        return owner!.User.Name;
     }
 
     public async Task AddUserToRoom(string userId, string roomId, string memberRole = RoomMemberRoles.Member)
@@ -60,8 +78,6 @@ public class RoomService(RoomDbContext context) : IRoomService
 
         await context.SaveChangesAsync();
     }
-
-
 
 
 }

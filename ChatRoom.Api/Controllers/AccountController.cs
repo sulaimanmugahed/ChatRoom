@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using ChatRoom.Api.Contracts.Dtos;
 using ChatRoom.Api.Contracts.Interfaces;
 using ChatRoom.Api.Contracts.Wrappers;
 using ChatRoom.Api.Domain.Models;
+using ChatRoom.Api.Contracts.Dtos.Account;
 
 namespace ChatRoom.Api.Controllers;
 [Route("api/[controller]")]

@@ -1,8 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ChatRoom.Api.Contracts.Dtos;
 using ChatRoom.Api.Contracts.Interfaces;
 using ChatRoom.Api.Infrastructure.Data;
 using ChatRoom.Api.Domain.Models;
+using ChatRoom.Api.Contracts.Dtos.Messages;
 
 
 namespace ChatRoom.Api.Infrastructure.Services;

@@ -1,4 +1,5 @@
 ﻿using ChatRoom.Api.Domain.Constants;
+using ChatRoom.Api.Domain.Models;
 
 namespace ChatRoom.Api.Contracts.Interfaces;
 
@@ -9,5 +10,8 @@ public interface IRoomService
     Task<List<string>> GetUserRooms(string userId);
     Task<bool> IsUserInRoom(string userId, string roomId);
     Task RemoveUserFromRoom(string userId, string roomId);
-    Task CreateRoom(Domain.Models.Room room);
+    Task CreateRoom(Room room);
+    Task<Room?> GetRoom(string id);
+    Task<string> GetRoomOwner(string roomId);
+    Task<List<Room>> GetAllRoom();
 }

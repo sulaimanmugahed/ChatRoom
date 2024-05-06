@@ -1,6 +1,6 @@
 ﻿using ChatRoom.Api.Domain.Models;
 
-namespace ChatRoom.Api.Contracts.Dtos;
+namespace ChatRoom.Api.Contracts.Dtos.Messages;
 
 public class RoomMessageOutput
 {

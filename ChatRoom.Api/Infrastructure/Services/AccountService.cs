@@ -7,11 +7,11 @@ using System.Security.Claims;
 using System.Text;
 using Azure.Core;
 using ChatRoom.Api.Contracts.Wrappers;
-using ChatRoom.Api.Contracts.Dtos;
 using ChatRoom.Api.Contracts.Interfaces;
 using ChatRoom.Api.Domain.Models;
 using ChatRoom.Api.Domain.Settings;
 using ChatRoom.Api.Domain.Constants;
+using ChatRoom.Api.Contracts.Dtos.Account;
 
 
 namespace ChatRoom.Api.Infrastructure.Services;

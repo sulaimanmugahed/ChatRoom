@@ -1,4 +1,4 @@
-﻿using ChatRoom.Api.Contracts.Dtos;
+﻿using ChatRoom.Api.Contracts.Dtos.Messages;
 
 namespace ChatRoom.Api.Contracts.Interfaces;
 public interface IMessageService

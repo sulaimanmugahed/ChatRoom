@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.SignalR;
-using ChatRoom.Api.Contracts.Dtos;
 using ChatRoom.Api.Contracts.Interfaces;
+using ChatRoom.Api.Contracts.Dtos.Messages;
 
 namespace ChatRoom.Api.Hubs;
 
