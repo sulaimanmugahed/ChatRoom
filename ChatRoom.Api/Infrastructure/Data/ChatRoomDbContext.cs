@@ -6,16 +6,18 @@ using ChatRoom.Api.Domain.Models;
 using System.Reflection;
 namespace ChatRoom.Api.Infrastructure.Data;
 
-public class RoomDbContext(DbContextOptions<RoomDbContext> options)
+public class ChatRoomDbContext(DbContextOptions<ChatRoomDbContext> options)
     : IdentityDbContext<AppUser, AppRole, string>
     (options)
 {
 
     public DbSet<UserConnection> UserConnections { get; set; }
-    public DbSet<Domain.Models.Room> Rooms { get; set; }
+    public DbSet<Room> Rooms { get; set; }
     public DbSet<UserRoom> UserRooms { get; set; }
     public DbSet<UserMessage> UserMessages { get; set; }
     public DbSet<RoomMessage> RoomMessages { get; set; }
+    public DbSet<Follow> Follows { get; set; }
+
 
 
     protected override void OnModelCreating(ModelBuilder builder)

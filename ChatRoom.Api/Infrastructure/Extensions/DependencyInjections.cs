@@ -22,7 +22,7 @@ public static class DependencyInjections
 	public static IServiceCollection AddApplicationServices(this IServiceCollection services, IConfiguration configuration)
 	{
 		// register dbcontext
-		services.AddDbContext<RoomDbContext>(options =>
+		services.AddDbContext<ChatRoomDbContext>(options =>
 		{
 			options.UseSqlServer(configuration.GetConnectionString("SqlServerConnection"));
 		});
@@ -53,7 +53,7 @@ public static class DependencyInjections
 			options.Password.RequireUppercase = identitySettings.PasswordRequireUppercase;
 			options.Password.RequireLowercase = identitySettings.PasswordRequireLowercase;
 		})
-			   .AddEntityFrameworkStores<RoomDbContext>()
+			   .AddEntityFrameworkStores<ChatRoomDbContext>()
 			   .AddDefaultTokenProviders();
 
 

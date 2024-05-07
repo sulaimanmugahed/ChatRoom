@@ -7,7 +7,7 @@ using ChatRoom.Api.Contracts.Dtos.Messages;
 
 namespace ChatRoom.Api.Infrastructure.Services;
 
-public class MessageService(RoomDbContext context) : IMessageService
+public class MessageService(ChatRoomDbContext context) : IMessageService
 {
     public async Task<List<PrivateMessageOutput>> GetPrivateMessage(string sender, string recever)
     {

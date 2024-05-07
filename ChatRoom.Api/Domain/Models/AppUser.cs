@@ -12,6 +12,9 @@ public class AppUser : IdentityUser
     public ICollection<UserMessage> UserMessageRecipients { get; set; }
     public ICollection<UserMessage> UserMessageSenders { get; set; }
     public ICollection<RoomMessage> RoomMessages { get; set; }
+    public ICollection<Follow> Followers { get; set; }
+    public ICollection<Follow> Following { get; set; }
+     
 
 
 }

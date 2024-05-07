@@ -8,7 +8,7 @@ using ChatRoom.Api.Infrastructure.Data;
 namespace ChatRoom.Api.Infrastructure.Services;
 
 
-public class UserConnectionService(RoomDbContext context) : IUserConnectionService
+public class UserConnectionService(ChatRoomDbContext context) : IUserConnectionService
 {
     public async Task<List<string>> GetUserConnections(string userId)
     {

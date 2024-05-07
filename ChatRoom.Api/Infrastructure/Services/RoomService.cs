@@ -8,7 +8,7 @@ using ChatRoom.Api.Domain.Models;
 
 namespace ChatRoom.Api.Infrastructure.Services;
 
-public class RoomService(RoomDbContext context) : IRoomService
+public class RoomService(ChatRoomDbContext context) : IRoomService
 {
 
     public async Task<List<string>> GetUserRooms(string userId)

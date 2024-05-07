@@ -11,7 +11,7 @@ using ChatRoom.Api.Infrastructure.Data;
 
 namespace ChatRoom.Api.Migrations
 {
-    [DbContext(typeof(RoomDbContext))]
+    [DbContext(typeof(ChatRoomDbContext))]
     [Migration("20240503231124_Initial")]
     partial class Initial
     {
