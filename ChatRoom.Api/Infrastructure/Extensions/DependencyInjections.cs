@@ -35,6 +35,7 @@ public static class DependencyInjections
 		services.AddScoped<IMessageService, MessageService>();
 		services.AddScoped<ICurrentAuthUserService, CurrentAuthUserService>();
 		services.AddScoped<IFollowService, FollowService>();
+		services.AddScoped<IUserService, UserService>();
 
 		services.Configure<JWTSettings>(configuration.GetSection(nameof(JWTSettings)));
 

@@ -41,8 +41,11 @@ public class FollowService(ChatRoomDbContext context) : IFollowService
 			FollowingId = userToFollow,
 		};
 
-		await context.AddAsync(follow);
-		await context.SaveChangesAsync();
+		if (!context.Follows.Contains(follow))
+		{
+			await context.AddAsync(follow);
+			await context.SaveChangesAsync();
+		}
 	}
 
 
