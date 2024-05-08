@@ -36,4 +36,11 @@ public class FollowsController(
 		return new BaseResult();
 	}
 
+	[HttpDelete(nameof(UnFollow)), Authorize]
+	public async Task<BaseResult> UnFollow(string userToUnFollow)
+	{
+		await followService.UnFollow(currentAuthUser.UserId, userToUnFollow);
+		return new BaseResult();
+	}
+
 }

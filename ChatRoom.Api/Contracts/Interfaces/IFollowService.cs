@@ -4,7 +4,8 @@ namespace ChatRoom.Api.Contracts.Interfaces;
 public interface IFollowService
 {
     Task Follow(string currentUser, string userToFollow);
-    Task<List<FollowerDto>> GetAllFollowers(string currentUser);
+    Task UnFollow(string currentUser, string userToUnFollow);
+	Task<List<FollowerDto>> GetAllFollowers(string currentUser);
     Task<List<FollowerDto>> GetAllFollowing(string currentUser);
     Task<bool> IsFollowingMe(string currentUser, string userToCheck);
 }

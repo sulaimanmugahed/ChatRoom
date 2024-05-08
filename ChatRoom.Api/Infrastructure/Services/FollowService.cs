@@ -48,6 +48,17 @@ public class FollowService(ChatRoomDbContext context) : IFollowService
 		}
 	}
 
+	public async Task UnFollow(string currentUser, string userToUnFollow)
+	{
+		var follow = await context.Follows
+			.SingleOrDefaultAsync(x => x.FollowerId == currentUser && x.FollowingId == userToUnFollow);
+		if (follow is not null)
+		{
+			context.Remove(follow);
+			await context.SaveChangesAsync();
+		}
+	}
+
 
 	public async Task<bool> IsFollowingMe(string currentUser, string userToCheck)
 	{
