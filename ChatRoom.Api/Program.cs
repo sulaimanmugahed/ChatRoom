@@ -3,6 +3,7 @@ using ChatRoom.Api.Domain.Models;
 using ChatRoom.Api.Hubs;
 using ChatRoom.Api.Infrastructure.Data.Seeds;
 using ChatRoom.Api.Infrastructure.Extensions;
+using ChatRoom.Api.Infrastructure.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,8 +19,6 @@ if (app.Environment.IsDevelopment())
 	app.UseSwaggerUI();
 }
 
-
-
 app.UseCors("Any");
 
 app.UseHttpsRedirection();
@@ -27,11 +26,11 @@ app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseMiddleware<CustomGlobalErrorHandlerMiddleware>();
+
 app.MapControllers();
 
-
 app.MapHub<ChatHub>($"/chatHub");
-
 
 // seeding data
 using var scope = app.Services.CreateScope();
