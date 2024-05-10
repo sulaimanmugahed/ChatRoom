@@ -1,14 +1,16 @@
 # ChatRoom API
 
-This project is a web API built with ASP.NET Core that allows users to register, join chat rooms, starting private chat, and engage in real-time conversations with support agents. The application utilizes the SignalR library to enable real-time communication.
+Ready to turn your client's online vision into a thriving hub? My .NET 8
+Real-Time API is like magic sprinkles for building awesome communities.
+ **Let's sprinkle some together! **
 
-## Features
 
-- User Registration: Users can create an account to access the chat functionality.
-- Join Chat Room: Users can join a specific chat room to engage in group conversations.
-- Private Messaging: Users can initiate private conversations with specific support agents or other users.
-- Real-Time Updates: The application leverages SignalR to provide real-time updates and instant message delivery.
-- Security: The API implements secure authentication and authorization mechanisms to protect user data and ensure a safe chat environment.
+## Why ChatRoom?
+
+- Instant Fun: Sign up and jump into exciting chat rooms
+- Chat Like a Champ: Connect with friends & support in real-time
+- New Friends Forever: Find awesome people and follow them with a tap
+- Alawys Connected: Chat instantly - cinversations never stop!
 
 
 ## Technologies Used
@@ -21,7 +23,7 @@ This project is a web API built with ASP.NET Core that allows users to register,
 
 ## Prerequisites
 
-- .NET Core SDK [link to download](https://dotnet.microsoft.com/download)
+- .NET 8 Core SDK [link to download](https://dotnet.microsoft.com/download)
 - SQL Server [link to download](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
 
 ## Getting Started
@@ -72,7 +74,16 @@ The following API endpoints are available:
 
 - **POST /api/Account/Register**: Register a new user.
 - **POST /api/Account/Authenticate**: Authenticate a user and obtain an access token.
+  
 - **POST /api/Rooms/Create**: Create a new chat room.
+- **GET /api/Rooms/GetRoom**: Get room by id
+- **GET /api/Rooms/GetRoomDetail**: Get room detail by id
+- **GET /api/Rooms/GetRoomList**: Get all rooms
+
+- **GET /api/Follows/GetAllFollowers**: Get all followers of current auth user
+- **GET /api/Follows/GetAllFollowing**: Get all following of current auth use
+- **Post /api/Follows/Follow**: Follow user by id
+- **Delete /api/Follows/UnFollow**: UnFollow user by id
 
 ## Authentication
 
