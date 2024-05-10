@@ -74,7 +74,16 @@ The following API endpoints are available:
 
 - **POST /api/Account/Register**: Register a new user.
 - **POST /api/Account/Authenticate**: Authenticate a user and obtain an access token.
+  
 - **POST /api/Rooms/Create**: Create a new chat room.
+- **GET /api/Rooms/GetRoom**: Get room by id
+- **GET /api/Rooms/GetRoomDetail**: Get room detail by id
+- **GET /api/Rooms/GetRoomList**: Get all rooms
+
+- **GET /api/Follows/GetAllFollowers**: Get all followers of current auth user
+- **GET /api/Follows/GetAllFollowing**: Get all following of current auth use
+- **Post /api/Follows/Follow**: Follow user by id
+- **Delete /api/Follows/UnFollow**: UnFollow user by id
 
 ## Authentication
 
