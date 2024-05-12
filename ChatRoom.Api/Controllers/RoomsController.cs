@@ -8,6 +8,7 @@ using ChatRoom.Api.Hubs;
 using System.Security.Claims;
 using ChatRoom.Api.Contracts.Wrappers;
 using ChatRoom.Api.Contracts.Dtos.Rooms;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ChatRoom.Api.Controllers;
 [Route("api/[controller]")]
@@ -18,7 +19,7 @@ public class RoomsController(
 	) : ControllerBase
 {
 
-	[HttpPost(nameof(Create))]
+	[HttpPost(nameof(Create)),Authorize]
 	public async Task<BaseResult<string>> Create(string roomName)
 	{
 		var newRoom = new Room
@@ -42,7 +43,7 @@ public class RoomsController(
 	}
 
 
-	[HttpGet(nameof(GetRoomList))]
+	[HttpGet(nameof(GetRoomList)),Authorize]
 	public async Task<BaseResult<List<RoomDto>>> GetRoomList()
 	{
 		var rooms = await roomService.GetAllRoom();
@@ -56,7 +57,7 @@ public class RoomsController(
 	}
 
 
-	[HttpGet(nameof(GetRoom))]
+	[HttpGet(nameof(GetRoom)),Authorize]
 	public async Task<BaseResult<RoomDto>> GetRoom(string roomId)
 	{
 		var room = await roomService.GetRoom(roomId);
@@ -71,7 +72,7 @@ public class RoomsController(
 	}
 
 
-	[HttpGet(nameof(GetRoomDetail))]
+	[HttpGet(nameof(GetRoomDetail)),Authorize]
 	public async Task<BaseResult<RoomDetailDto>> GetRoomDetail(string roomId)
 	{
 		var room = await roomService.GetRoom(roomId);
